@@ -1,0 +1,20 @@
+{
+  "name": "api-to-do-fastify",
+  "version": "1.0.0",
+  "description": "To-do application using fastify framework.",
+  "main": "index.js",
+  "repository": "git@github.com:IgorEmerick/api-to-do-fastify.git",
+  "author": "Igor Emerick <igorbarbosaemerick@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --require dotenv/config --respawn src/server.ts"
+  },
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^1.2.0",
+    "@types/node": "^20.1.7",
+    "eslint": "^8.40.0",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4"
+  }
+}
