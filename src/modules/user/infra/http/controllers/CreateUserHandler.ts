@@ -21,7 +21,7 @@ export async function createUserHandler(
 
   const { name, email, password } = request.body;
 
-  const user = await createUserService.execute({ email, name, password });
+  await createUserService.execute({ email, name, password });
 
-  reply.status(201).send({ user });
+  reply.status(201).send();
 }

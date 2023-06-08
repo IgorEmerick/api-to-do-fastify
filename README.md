@@ -59,7 +59,7 @@ Back-end application to build a to-do list.
 **Create user**
 ***
 
-- [ ] Should create an user by name, email and password.
+- [x] Should create an user by name, email and password.
 - [ ] Should not create two or more users with same email.
 - [ ] Password must contain from 8 to 16 characters.
 - [ ] Password must contain upper case.
