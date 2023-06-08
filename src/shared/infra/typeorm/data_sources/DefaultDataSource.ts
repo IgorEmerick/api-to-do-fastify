@@ -11,6 +11,6 @@ export const DefaultDataSource = new DataSource({
   password: process.env.DATABASE_PASSWORD,
   database: 'to-do-fastify',
   synchronize: false,
-  entities: ['src/modules/**/infra/typeorm/entities/*.ts'],
+  entities: ['src/modules/**/infra/typeorm/*.ts'],
   migrations: ['src/shared/infra/typeorm/migrations/*.ts'],
 });

@@ -21,13 +21,6 @@
     "@typescript-eslint/no-use-before-define": [
 	    "error"
     ],
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ],
     "prettier/prettier": [
       "error",
       {
