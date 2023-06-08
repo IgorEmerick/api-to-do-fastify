@@ -15,4 +15,8 @@ export class UserRepository implements IUserRepository {
 
     return this.repository.save(newUser);
   }
+
+  async findByEmail(email: string): Promise<User> {
+    return this.repository.findOneBy({ email });
+  }
 }
