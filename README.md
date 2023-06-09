@@ -8,7 +8,7 @@ Back-end application to build a to-do list.
 **Register logs**
 ***
 
-- [ ] All requests must be registered into log files.
+- [x] All requests must be registered into log files.
 
 ## Project
 
