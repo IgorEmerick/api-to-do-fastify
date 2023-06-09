@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { createUserHandler } from '../controllers/CreateUserHandler';
+import { createUserHandler } from '../handlers/CreateUserHandler';
 
 export async function userRouter(app: FastifyInstance) {
   app.post('/', createUserHandler);
