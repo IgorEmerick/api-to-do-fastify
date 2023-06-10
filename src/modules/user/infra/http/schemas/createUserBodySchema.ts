@@ -1,10 +1,12 @@
 import { Type, Static } from '@sinclair/typebox';
+import { nameRegex } from 'src/config/regex/nameRegex';
+import { passwordRegex } from 'src/config/regex/passwordRegex';
 
 export const createUserBodySchema = Type.Object({
-  name: Type.String({ pattern: '^([a-zA-Z]+)(( [a-zA-Z]+)*)$' }),
+  name: Type.String({ pattern: nameRegex }),
   email: Type.String({ format: 'email' }),
   password: Type.String({
-    pattern: `^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{10,16}$`,
+    pattern: passwordRegex,
     minLength: 10,
     maxLength: 16,
   }),

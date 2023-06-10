@@ -72,5 +72,5 @@ Back-end application to build a to-do list.
 **Authenticate user**
 ***
 
-- [ ] Should authenticate an user by email and password.
-- [ ] User should be able to choice if the authentication will be valid for 1 or 30 days.
+- [x] Should authenticate an user by email and password.
+- [x] User should be able to choice if the authentication will be valid for 1 or 30 days.
