@@ -1,4 +1,3 @@
-import { ProjectMember } from '@modules/project/infra/typeorm/ProjectMember';
 import {
   Column,
   CreateDateColumn,
@@ -7,9 +6,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { ProjectMember } from './ProjectMember';
 
-@Entity('users')
-export class User {
+@Entity('projects')
+export class Project {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -22,12 +22,6 @@ export class User {
   @Column()
   name: string;
 
-  @Column({ unique: true })
-  email: string;
-
-  @Column()
-  password: string;
-
-  @OneToMany(() => ProjectMember, project => project.user)
-  projects: ProjectMember[];
+  @OneToMany(() => ProjectMember, member => member.project)
+  members: ProjectMember[];
 }
