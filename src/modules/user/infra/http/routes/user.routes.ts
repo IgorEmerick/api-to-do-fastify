@@ -1,5 +1,5 @@
 import { FastifyInstance } from 'fastify';
-import { createUserHandler } from '../handlers/CreateUserHandler';
+import { createUserHandler } from '../handlers/createUserHandler';
 import {
   createUserBodySchema,
   createUserBodyType,
@@ -8,7 +8,7 @@ import {
   authenticateUserBodySchema,
   authenticateUserBodyType,
 } from '../schemas/authenticateUserBodySchema';
-import { authenticateUserHandler } from '../handlers/AuthenticateUserHandler';
+import { authenticateUserHandler } from '../handlers/authenticateUserHandler';
 
 export async function userRouter(app: FastifyInstance) {
   app.post<{ Body: createUserBodyType }>(
