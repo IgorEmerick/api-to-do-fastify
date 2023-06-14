@@ -1,6 +1,6 @@
 import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
 import { User } from '@modules/user/infra/typeorm/User';
-import { DataSource, Repository } from 'typeorm';
+import { DataSource, In, Repository } from 'typeorm';
 import { IUserRepository } from '../models/IUserRepository';
 
 export class UserRepository implements IUserRepository {
@@ -18,5 +18,13 @@ export class UserRepository implements IUserRepository {
 
   async findByEmail(email: string): Promise<User> {
     return this.repository.findOneBy({ email });
+  }
+
+  async findByEmails(emails: string[]): Promise<User[]> {
+    return this.repository.findBy({ email: In(emails) });
+  }
+
+  async findById(id: string): Promise<User> {
+    return this.repository.findOneBy({ id });
   }
 }
