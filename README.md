@@ -44,6 +44,7 @@ Back-end application to build a to-do list.
 - [ ] Should be possible create a status into a project using status name and project id.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
+- [ ] Should not create two status with same name in same project.
 
 ## Task
 
