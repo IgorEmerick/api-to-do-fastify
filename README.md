@@ -38,13 +38,13 @@ Back-end application to build a to-do list.
 
 ## Task
 
-**Create task status**
+**Create task stage**
 ***
 
-- [ ] Should be possible create a status into a project using status name and project id.
+- [ ] Should be possible create a stage into a project using stage name and project id.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
-- [ ] Should not create two status with same name in same project.
+- [ ] Should not create two stages with same name in same project.
 
 **Create task**
 ***

@@ -15,4 +15,8 @@ export class ProjectRepository implements IProjectRepository {
 
     return this.repository.save(newProject);
   }
+
+  async findById(id: string): Promise<Project> {
+    return this.repository.findOneBy({ id });
+  }
 }

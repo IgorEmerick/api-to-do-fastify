@@ -3,4 +3,5 @@ import { Project } from '@modules/project/infra/typeorm/Project';
 
 export interface IProjectRepository {
   create(project: ICreateProjectDTO): Promise<Project>;
+  findById(id: string): Promise<Project>;
 }
