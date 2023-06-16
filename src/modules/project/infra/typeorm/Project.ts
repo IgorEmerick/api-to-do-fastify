@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { ProjectMember } from './ProjectMember';
+import { TaskStage } from '@modules/task/infra/typeorm/TaskStage';
 
 @Entity('projects')
 export class Project {
@@ -24,4 +25,7 @@ export class Project {
 
   @OneToMany(() => ProjectMember, member => member.project)
   members: ProjectMember[];
+
+  @OneToMany(() => TaskStage, stage => stage.project)
+  stages: TaskStage[];
 }
