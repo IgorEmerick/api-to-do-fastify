@@ -44,7 +44,7 @@ Back-end application to build a to-do list.
 - [x] Should be possible create a stage into a project using stage name, color and project id.
 - [x] Should not create two stages with same name in same project.
 - [x] Should not create a stage for a project that does not exists.
-- [ ] Must request authentication.
+- [x] Must request authentication.
 - [ ] Must request admin permission on project.
 
 **Create task**
