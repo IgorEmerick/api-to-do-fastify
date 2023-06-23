@@ -9,9 +9,11 @@ import {
   createTaskStageParamsSchema,
   createTaskStageParamsType,
 } from '../schemas/createTaskStageParamsSchema';
+import { ensureAdminPermissionOnProject } from '@shared/infra/http/middlewares/ensureAdminPermissionOnProject';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
+  app.addHook('preHandler', ensureAdminPermissionOnProject);
 
   app.post<{
     Body: createTaskStageBodyType;

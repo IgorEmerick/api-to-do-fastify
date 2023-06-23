@@ -54,7 +54,7 @@ Back-end application to build a to-do list.
 - [x] Should not create two stages with same name in same project.
 - [x] Should not create a stage for a project that does not exists.
 - [x] Must request authentication.
-- [ ] Must request admin permission on project.
+- [x] Must request admin permission on project.
 
 **Create task**
 ***
