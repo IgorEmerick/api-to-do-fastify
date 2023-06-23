@@ -36,6 +36,15 @@ Back-end application to build a to-do list.
 - [ ] Must request authentication.
 - [ ] Must request at least view permission to projects on list.
 
+**Update users permission**
+***
+
+- [ ] Should be possible update users permission on project.
+- [ ] Should not be able to update permissions if project does not exist.
+- [ ] Should not be able to update permissions if user does not have any permission on project.
+- [ ] Must request authentication.
+- [ ] Must request admin permission.
+
 ## Task
 
 **Create task stage**
