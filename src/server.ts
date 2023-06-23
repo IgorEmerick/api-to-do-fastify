@@ -5,7 +5,5 @@ import { config } from 'dotenv';
 config();
 
 startEnvironment().then(() => {
-  app.listen({ port: Number(process.env.API_PORT) }).then(() => {
-    console.log(`Server is listening on port ${process.env.API_PORT}!`);
-  });
+  app.listen({ port: Number(process.env.API_PORT) });
 });

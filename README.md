@@ -36,17 +36,25 @@ Back-end application to build a to-do list.
 - [ ] Must request authentication.
 - [ ] Must request at least view permission to projects on list.
 
-## Status
-
-**Create status**
+**Update users permission**
 ***
 
-- [ ] Should be possible create a status into a project using status name and project id.
+- [ ] Should be possible update users permission on project.
+- [ ] Should not be able to update permissions if project does not exist.
+- [ ] Should not be able to update permissions if user does not have any permission on project.
 - [ ] Must request authentication.
-- [ ] Must request admin permission on project.
-- [ ] Should not create two status with same name in same project.
+- [ ] Must request admin permission.
 
 ## Task
+
+**Create task stage**
+***
+
+- [x] Should be possible create a stage into a project using stage name, color and project id.
+- [x] Should not create two stages with same name in same project.
+- [x] Should not create a stage for a project that does not exists.
+- [x] Must request authentication.
+- [x] Must request admin permission on project.
 
 **Create task**
 ***
