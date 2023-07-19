@@ -2,18 +2,26 @@ import { FastifyInstance } from 'fastify';
 import {
   createTaskStageBodySchema,
   createTaskStageBodyType,
-} from '../schemas/createTaskStageBodySchema';
+} from '../schemas/body/createTaskStageBodySchema';
 import { createTaskStageHandler } from '../handlers/createTaskStageHandler';
 import { ensureUserAuthentication } from '@shared/infra/http/middlewares/ensureUserAuthentication';
 import {
   createTaskStageParamsSchema,
   createTaskStageParamsType,
-} from '../schemas/createTaskStageParamsSchema';
+} from '../schemas/params/createTaskStageParamsSchema';
 import { ensureAdminPermissionOnProject } from '@shared/infra/http/middlewares/ensureAdminPermissionOnProject';
+import {
+  CreateTaskBodyType,
+  createTaskBodySchema,
+} from '../schemas/body/createTaskBodySchema';
+import {
+  CreateTaskParamsType,
+  createTaskParamsSchema,
+} from '../schemas/params/createTaskParamsSchema';
+import { createTaskHandler } from '../handlers/createTaskHandler';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
-  app.addHook('preHandler', ensureAdminPermissionOnProject);
 
   app.post<{
     Body: createTaskStageBodyType;
@@ -25,7 +33,14 @@ export async function taskRouter(app: FastifyInstance) {
         body: createTaskStageBodySchema,
         params: createTaskStageParamsSchema,
       },
+      preHandler: [ensureAdminPermissionOnProject],
     },
     createTaskStageHandler,
+  );
+
+  app.post<{ Body: CreateTaskBodyType; Params: CreateTaskParamsType }>(
+    '/task/:project_id/:stage_id',
+    { schema: { body: createTaskBodySchema, params: createTaskParamsSchema } },
+    createTaskHandler,
   );
 }
