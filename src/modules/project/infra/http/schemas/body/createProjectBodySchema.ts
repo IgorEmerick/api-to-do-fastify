@@ -12,4 +12,4 @@ export const createProjectBodySchema = Type.Object({
   ),
 });
 
-export type createProjectBodyType = Static<typeof createProjectBodySchema>;
+export type CreateProjectBodyType = Static<typeof createProjectBodySchema>;

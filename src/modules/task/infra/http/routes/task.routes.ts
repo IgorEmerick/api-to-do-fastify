@@ -1,12 +1,12 @@
 import { FastifyInstance } from 'fastify';
 import {
   createTaskStageBodySchema,
-  createTaskStageBodyType,
+  CreateTaskStageBodyType,
 } from '../schemas/body/createTaskStageBodySchema';
 import { createTaskStageHandler } from '../handlers/createTaskStageHandler';
 import {
   createTaskStageParamsSchema,
-  createTaskStageParamsType,
+  CreateTaskStageParamsType,
 } from '../schemas/params/createTaskStageParamsSchema';
 import {
   CreateTaskBodyType,
@@ -25,8 +25,8 @@ export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
 
   app.post<{
-    Body: createTaskStageBodyType;
-    Params: createTaskStageParamsType;
+    Body: CreateTaskStageBodyType;
+    Params: CreateTaskStageParamsType;
   }>(
     '/stage/:project_id',
     {

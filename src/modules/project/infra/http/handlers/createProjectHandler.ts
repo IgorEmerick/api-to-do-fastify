@@ -1,12 +1,12 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { createProjectBodyType } from '../schemas/createProjectBodySchema';
+import { CreateProjectBodyType } from '../schemas/body/createProjectBodySchema';
 import { User } from '../../../../user/infra/typeorm/User';
 import { container } from '../../../../../shared/infra/containers';
 import { CreateProjectService } from '../../../services/CreateProjectService';
 
 interface ICreateProjectRequest extends FastifyRequest {
   user: User;
-  body: createProjectBodyType;
+  body: CreateProjectBodyType;
 }
 
 export async function createProjectHandler(

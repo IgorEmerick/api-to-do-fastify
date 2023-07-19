@@ -1,10 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { authenticateUserBodyType } from '../schemas/authenticateUserBodySchema';
+import { AuthenticateUserBodyType } from '../schemas/body/authenticateUserBodySchema';
 import { container } from '../../../../../shared/infra/containers';
 import { AuthenticateUserService } from '../../../services/AuthenticateUserService';
 
 interface IAuthenticateUserRequest extends FastifyRequest {
-  body: authenticateUserBodyType;
+  body: AuthenticateUserBodyType;
 }
 
 export async function authenticateUserHandler(

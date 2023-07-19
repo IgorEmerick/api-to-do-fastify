@@ -6,4 +6,4 @@ export const createTaskStageBodySchema = Type.Object({
   color: Type.String({ pattern: hexRedex }),
 });
 
-export type createTaskStageBodyType = Static<typeof createTaskStageBodySchema>;
+export type CreateTaskStageBodyType = Static<typeof createTaskStageBodySchema>;

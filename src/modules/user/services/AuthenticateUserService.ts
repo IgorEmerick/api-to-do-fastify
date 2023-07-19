@@ -1,4 +1,4 @@
-import { authenticateUserBodyType } from '../infra/http/schemas/authenticateUserBodySchema';
+import { AuthenticateUserBodyType } from '../infra/http/schemas/body/authenticateUserBodySchema';
 import { ITokenProvider } from '../providers/models/ITokenProvider';
 import { IUserRepository } from '../repositories/models/IUserRepository';
 import { IHashProvider } from '../providers/models/IHashProvider';
@@ -15,7 +15,7 @@ export class AuthenticateUserService {
     email,
     keep_logged,
     password,
-  }: authenticateUserBodyType): Promise<string> {
+  }: AuthenticateUserBodyType): Promise<string> {
     const user = await this.userRepository.findByEmail(email);
 
     const validPassword =

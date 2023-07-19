@@ -1,23 +1,23 @@
 import { FastifyInstance } from 'fastify';
 import { createUserHandler } from '../handlers/createUserHandler';
 import {
-  createUserBodySchema,
-  createUserBodyType,
-} from '../schemas/createUserBodySchema';
-import {
   authenticateUserBodySchema,
-  authenticateUserBodyType,
-} from '../schemas/authenticateUserBodySchema';
+  AuthenticateUserBodyType,
+} from '../schemas/body/authenticateUserBodySchema';
 import { authenticateUserHandler } from '../handlers/authenticateUserHandler';
+import {
+  CreateUserBodyType,
+  createUserBodySchema,
+} from '../schemas/body/createUserBodySchema';
 
 export async function userRouter(app: FastifyInstance) {
-  app.post<{ Body: createUserBodyType }>(
+  app.post<{ Body: CreateUserBodyType }>(
     '/',
     { schema: { body: createUserBodySchema } },
     createUserHandler,
   );
 
-  app.post<{ Body: authenticateUserBodyType }>(
+  app.post<{ Body: AuthenticateUserBodyType }>(
     '/authenticate',
     { schema: { body: authenticateUserBodySchema } },
     authenticateUserHandler,

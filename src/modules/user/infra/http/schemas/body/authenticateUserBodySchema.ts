@@ -6,6 +6,6 @@ export const authenticateUserBodySchema = Type.Object({
   keep_logged: Type.Boolean({ default: false }),
 });
 
-export type authenticateUserBodyType = Static<
+export type AuthenticateUserBodyType = Static<
   typeof authenticateUserBodySchema
 >;

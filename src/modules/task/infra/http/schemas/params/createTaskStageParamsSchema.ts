@@ -5,6 +5,6 @@ export const createTaskStageParamsSchema = Type.Object({
   project_id: Type.String({ pattern: uuidV4Regex }),
 });
 
-export type createTaskStageParamsType = Static<
+export type CreateTaskStageParamsType = Static<
   typeof createTaskStageParamsSchema
 >;

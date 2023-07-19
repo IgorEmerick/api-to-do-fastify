@@ -1,12 +1,12 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { createTaskStageBodyType } from '../schemas/body/createTaskStageBodySchema';
-import { createTaskStageParamsType } from '../schemas/params/createTaskStageParamsSchema';
+import { CreateTaskStageBodyType } from '../schemas/body/createTaskStageBodySchema';
+import { CreateTaskStageParamsType } from '../schemas/params/createTaskStageParamsSchema';
 import { container } from '../../../../../shared/infra/containers';
 import { CreateTaskStageService } from '../../../services/CreateTaskStageService';
 
 interface ICreateTaskStageRequest extends FastifyRequest {
-  body: createTaskStageBodyType;
-  params: createTaskStageParamsType;
+  body: CreateTaskStageBodyType;
+  params: CreateTaskStageParamsType;
 }
 
 export async function createTaskStageHandler(
