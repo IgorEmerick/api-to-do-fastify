@@ -6,4 +6,5 @@ export interface IUserRepository {
   findByEmail(email: string): Promise<User>;
   findByEmails(emails: string[]): Promise<User[]>;
   findById(id: string): Promise<User>;
+  findWithProjectsPermissionsByIds(ids: string[]): Promise<User[]>;
 }

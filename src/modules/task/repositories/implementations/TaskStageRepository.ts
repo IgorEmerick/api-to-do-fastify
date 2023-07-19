@@ -22,4 +22,8 @@ export class TaskStageRepository implements ITaskStageRepository {
   ): Promise<TaskStage> {
     return this.repository.findOneBy({ name, project_id });
   }
+
+  async findById(id: string): Promise<TaskStage> {
+    return this.repository.findOneBy({ id });
+  }
 }

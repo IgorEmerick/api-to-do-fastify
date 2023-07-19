@@ -27,4 +27,11 @@ export class UserRepository implements IUserRepository {
   async findById(id: string): Promise<User> {
     return this.repository.findOneBy({ id });
   }
+
+  async findWithProjectsPermissionsByIds(ids: string[]): Promise<User[]> {
+    return this.repository.find({
+      relations: { projects: true },
+      where: { id: In(ids) },
+    });
+  }
 }
