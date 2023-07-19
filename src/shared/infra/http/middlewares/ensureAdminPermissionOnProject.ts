@@ -1,21 +1,17 @@
 import { IProjectMemberRepository } from '@modules/project/repositories/models/IProjectMemberRepository';
-import { User } from '@modules/user/infra/typeorm/User';
 import { HttpError } from '@shared/errors/HttpError';
 import { container } from '@shared/infra/containers';
 import { FastifyRequest } from 'fastify';
 
 interface IRequest extends FastifyRequest {
-  user: User;
   params: { project_id: string };
 }
 
 export async function ensureAdminPermissionOnProject(
   request: IRequest,
 ): Promise<void> {
-  console.log('TEST');
-
   const { project_id } = request.params;
-  const { user } = request;
+  const { user_id } = request.headers;
 
   const projectMemberRepository = container.resolve<IProjectMemberRepository>(
     'projectMemberRepository',
@@ -23,7 +19,7 @@ export async function ensureAdminPermissionOnProject(
 
   const projectMember = await projectMemberRepository.findByProjectIdAndUserId(
     project_id,
-    user.id,
+    user_id as string,
   );
 
   if (!projectMember || projectMember.permission !== 'ADMIN') {
