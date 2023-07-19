@@ -1,4 +1,4 @@
-import { IProjectMemberRepository } from '@modules/project/repositories/models/IProjectMemberRepository';
+import { ProjectMemberRepository } from '@modules/project/repositories/implementations/ProjectMemberRepository';
 import { HttpError } from '@shared/errors/HttpError';
 import { container } from '@shared/infra/containers';
 import { FastifyRequest } from 'fastify';
@@ -7,13 +7,13 @@ interface IRequest extends FastifyRequest {
   params: { project_id: string };
 }
 
-export async function ensureAdminPermissionOnProject(
+export async function ensureEditPermissionOnProject(
   request: IRequest,
 ): Promise<void> {
-  const { project_id } = request.params;
   const { user_id } = request.headers;
+  const { project_id } = request.params;
 
-  const projectMemberRepository = container.resolve<IProjectMemberRepository>(
+  const projectMemberRepository = container.resolve<ProjectMemberRepository>(
     'projectMemberRepository',
   );
 
@@ -22,7 +22,11 @@ export async function ensureAdminPermissionOnProject(
     user_id as string,
   );
 
-  if (!projectMember || projectMember.permission !== 'ADMIN') {
+  if (
+    !projectMember ||
+    (projectMember.permission !== 'ADMIN' &&
+      projectMember.permission !== 'EDIT')
+  ) {
     throw new HttpError(403, 'Permission denied!');
   }
 }

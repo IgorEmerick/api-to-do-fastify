@@ -38,5 +38,5 @@ export async function ensureUserAuthentication(
     throw new HttpError(401, 'Invalid authentication!');
   }
 
-  request['user'] = user;
+  request.headers['user_id'] = user.id;
 }
