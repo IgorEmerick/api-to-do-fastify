@@ -60,6 +60,7 @@ Back-end application to build a to-do list.
 ***
 
 - [ ] Should be possible create a task using task title, description, stage id and owners ids.
+- [x] Should not be possible create a task to a stage that does not exists.
 - [ ] Must request authentication.
 - [ ] Must request at least edit permission on task project.
 - [ ] Must request at least edit permission on task project to task owners.
