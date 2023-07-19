@@ -1,4 +1,5 @@
 import { ProjectMember } from '@modules/project/infra/typeorm/ProjectMember';
+import { TaskOwner } from '@modules/task/infra/typeorm/TaskOwner';
 import {
   Column,
   CreateDateColumn,
@@ -30,4 +31,7 @@ export class User {
 
   @OneToMany(() => ProjectMember, project => project.user)
   projects: ProjectMember[];
+
+  @OneToMany(() => TaskOwner, task => task.user)
+  tasks: TaskOwner[];
 }
