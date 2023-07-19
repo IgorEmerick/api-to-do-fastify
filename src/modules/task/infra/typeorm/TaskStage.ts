@@ -5,9 +5,11 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { Task } from './Task';
 
 @Entity('task_stages')
 export class TaskStage {
@@ -32,4 +34,7 @@ export class TaskStage {
   @ManyToOne(() => Project, project => project.stages)
   @JoinColumn({ name: 'project_id' })
   project: Project;
+
+  @OneToMany(() => Task, task => task.stage)
+  tasks: Task[];
 }
