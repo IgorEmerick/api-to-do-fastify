@@ -40,7 +40,7 @@ export async function taskRouter(app: FastifyInstance) {
   );
 
   app.post<{ Body: CreateTaskBodyType; Params: CreateTaskParamsType }>(
-    '/task/:project_id/:stage_id',
+    '/create/:project_id/:stage_id',
     {
       schema: { body: createTaskBodySchema, params: createTaskParamsSchema },
       preHandler: [ensureEditPermissionOnProject],
