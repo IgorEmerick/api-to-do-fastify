@@ -19,6 +19,7 @@ import {
   createTaskParamsSchema,
 } from '../schemas/params/createTaskParamsSchema';
 import { createTaskHandler } from '../handlers/createTaskHandler';
+import { ensureEditPermissionOnProject } from '@shared/infra/http/middlewares/ensureEditPermissionOnProject';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
@@ -40,7 +41,10 @@ export async function taskRouter(app: FastifyInstance) {
 
   app.post<{ Body: CreateTaskBodyType; Params: CreateTaskParamsType }>(
     '/task/:project_id/:stage_id',
-    { schema: { body: createTaskBodySchema, params: createTaskParamsSchema } },
+    {
+      schema: { body: createTaskBodySchema, params: createTaskParamsSchema },
+      preHandler: [ensureEditPermissionOnProject],
+    },
     createTaskHandler,
   );
 }
