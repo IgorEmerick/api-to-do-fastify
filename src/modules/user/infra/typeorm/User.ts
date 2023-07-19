@@ -1,5 +1,3 @@
-import { ProjectMember } from '@modules/project/infra/typeorm/ProjectMember';
-import { TaskOwner } from '@modules/task/infra/typeorm/TaskOwner';
 import {
   Column,
   CreateDateColumn,
@@ -8,6 +6,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { ProjectMember } from '../../../project/infra/typeorm/ProjectMember';
+import { TaskOwner } from '../../../task/infra/typeorm/TaskOwner';
 
 @Entity('users')
 export class User {

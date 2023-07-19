@@ -1,10 +1,10 @@
-import { HttpError } from '@shared/errors/HttpError';
 import { Task } from '../infra/typeorm/Task';
 import { ITaskStageRepository } from '../repositories/models/ITaskStageRepository';
-import { IUserRepository } from '@modules/user/repositories/models/IUserRepository';
 import { ITaskRepository } from '../repositories/models/ITaskRepository';
 import { ITaskOwnerRepository } from '../repositories/models/ITaskOwnerRepository';
 import { ICreateTaskOwnerDTO } from '../dtos/ICreateTaskOwnerDTO';
+import { IUserRepository } from '../../user/repositories/models/IUserRepository';
+import { HttpError } from '../../../shared/errors/HttpError';
 
 interface IRequest {
   title: string;

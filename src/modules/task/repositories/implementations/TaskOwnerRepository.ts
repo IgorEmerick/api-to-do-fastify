@@ -1,7 +1,7 @@
 import { DataSource, Repository } from 'typeorm';
 import { ITaskOwnerRepository } from '../models/ITaskOwnerRepository';
-import { TaskOwner } from '@modules/task/infra/typeorm/TaskOwner';
-import { ICreateTaskOwnerDTO } from '@modules/task/dtos/ICreateTaskOwnerDTO';
+import { ICreateTaskOwnerDTO } from '../../dtos/ICreateTaskOwnerDTO';
+import { TaskOwner } from '../../infra/typeorm/TaskOwner';
 
 export class TaskOwnerRepository implements ITaskOwnerRepository {
   private repository: Repository<TaskOwner>;

@@ -1,5 +1,5 @@
-import { ICreateProjectMemberDTO } from '@modules/project/dtos/ICreateProjectMemberDTO';
-import { ProjectMember } from '@modules/project/infra/typeorm/ProjectMember';
+import { ICreateProjectMemberDTO } from '../../dtos/ICreateProjectMemberDTO';
+import { ProjectMember } from '../../infra/typeorm/ProjectMember';
 import { IProjectMemberRepository } from '../models/IProjectMemberRepository';
 import { DataSource, Repository } from 'typeorm';
 

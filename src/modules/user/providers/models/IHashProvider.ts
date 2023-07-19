@@ -1,4 +1,4 @@
-import { ICompareHashDTO } from '@modules/user/dtos/ICompareHashDTO';
+import { ICompareHashDTO } from '../../dtos/ICompareHashDTO';
 
 export interface IHashProvider {
   hash(phrase: string): Promise<string>;

@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { ProjectMember } from './ProjectMember';
-import { TaskStage } from '@modules/task/infra/typeorm/TaskStage';
+import { TaskStage } from '../../../task/infra/typeorm/TaskStage';
 
 @Entity('projects')
 export class Project {

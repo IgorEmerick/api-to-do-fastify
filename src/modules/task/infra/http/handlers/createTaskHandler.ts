@@ -1,8 +1,8 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { CreateTaskBodyType } from '../schemas/body/createTaskBodySchema';
 import { CreateTaskParamsType } from '../schemas/params/createTaskParamsSchema';
-import { container } from '@shared/infra/containers';
-import { CreateTaskService } from '@modules/task/services/CreateTaskService';
+import { container } from '../../../../../shared/infra/containers';
+import { CreateTaskService } from '../../../services/CreateTaskService';
 
 interface IRequest extends FastifyRequest {
   body: CreateTaskBodyType;

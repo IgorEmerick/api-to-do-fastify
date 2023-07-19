@@ -1,8 +1,8 @@
-import { HttpError } from '@shared/errors/HttpError';
 import { authenticateUserBodyType } from '../infra/http/schemas/authenticateUserBodySchema';
 import { ITokenProvider } from '../providers/models/ITokenProvider';
 import { IUserRepository } from '../repositories/models/IUserRepository';
 import { IHashProvider } from '../providers/models/IHashProvider';
+import { HttpError } from '../../../shared/errors/HttpError';
 
 export class AuthenticateUserService {
   constructor(

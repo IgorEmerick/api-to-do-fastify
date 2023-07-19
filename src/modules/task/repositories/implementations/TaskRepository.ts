@@ -1,7 +1,7 @@
 import { DataSource, Repository } from 'typeorm';
 import { ITaskRepository } from '../models/ITaskRepository';
-import { Task } from '@modules/task/infra/typeorm/Task';
-import { ICreateTaskDTO } from '@modules/task/dtos/ICreateTaskDTO';
+import { ICreateTaskDTO } from '../../dtos/ICreateTaskDTO';
+import { Task } from '../../infra/typeorm/Task';
 
 export class TaskRepository implements ITaskRepository {
   private repository: Repository<Task>;

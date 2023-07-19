@@ -1,7 +1,7 @@
-import { HttpError } from '@shared/errors/HttpError';
+import { HttpError } from '../../../shared/errors/HttpError';
+import { IProjectRepository } from '../../project/repositories/models/IProjectRepository';
 import { TaskStage } from '../infra/typeorm/TaskStage';
 import { ITaskStageRepository } from '../repositories/models/ITaskStageRepository';
-import { IProjectRepository } from '@modules/project/repositories/models/IProjectRepository';
 
 interface IRequest {
   name: string;

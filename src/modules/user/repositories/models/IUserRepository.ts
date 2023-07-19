@@ -1,5 +1,5 @@
-import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
-import { User } from '@modules/user/infra/typeorm/User';
+import { ICreateUserDTO } from '../../dtos/ICreateUserDTO';
+import { User } from '../../infra/typeorm/User';
 
 export interface IUserRepository {
   create(user: ICreateUserDTO): Promise<User>;

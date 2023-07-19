@@ -1,8 +1,8 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { createTaskStageBodyType } from '../schemas/body/createTaskStageBodySchema';
-import { container } from '@shared/infra/containers';
-import { CreateTaskStageService } from '@modules/task/services/CreateTaskStageService';
 import { createTaskStageParamsType } from '../schemas/params/createTaskStageParamsSchema';
+import { container } from '../../../../../shared/infra/containers';
+import { CreateTaskStageService } from '../../../services/CreateTaskStageService';
 
 interface ICreateTaskStageRequest extends FastifyRequest {
   body: createTaskStageBodyType;

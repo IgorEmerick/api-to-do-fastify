@@ -1,5 +1,5 @@
-import { ICreateProjectDTO } from '@modules/project/dtos/ICreateProjectDTO';
-import { Project } from '@modules/project/infra/typeorm/Project';
+import { ICreateProjectDTO } from '../../dtos/ICreateProjectDTO';
+import { Project } from '../../infra/typeorm/Project';
 
 export interface IProjectRepository {
   create(project: ICreateProjectDTO): Promise<Project>;

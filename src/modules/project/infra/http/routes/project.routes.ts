@@ -4,7 +4,7 @@ import {
   createProjectBodyType,
 } from '../schemas/createProjectBodySchema';
 import { createProjectHandler } from '../handlers/createProjectHandler';
-import { ensureUserAuthentication } from '@shared/infra/http/middlewares/ensureUserAuthentication';
+import { ensureUserAuthentication } from '../../../../../shared/infra/http/middlewares/ensureUserAuthentication';
 
 export async function projectRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);

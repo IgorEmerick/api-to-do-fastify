@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Project } from './Project';
-import { User } from '@modules/user/infra/typeorm/User';
+import { User } from '../../../user/infra/typeorm/User';
 
 @Entity('projects_members')
 export class ProjectMember {

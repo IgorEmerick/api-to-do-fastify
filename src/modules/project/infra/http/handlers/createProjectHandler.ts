@@ -1,8 +1,8 @@
-import { User } from '@modules/user/infra/typeorm/User';
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { createProjectBodyType } from '../schemas/createProjectBodySchema';
-import { container } from '@shared/infra/containers';
-import { CreateProjectService } from '@modules/project/services/CreateProjectService';
+import { User } from '../../../../user/infra/typeorm/User';
+import { container } from '../../../../../shared/infra/containers';
+import { CreateProjectService } from '../../../services/CreateProjectService';
 
 interface ICreateProjectRequest extends FastifyRequest {
   user: User;

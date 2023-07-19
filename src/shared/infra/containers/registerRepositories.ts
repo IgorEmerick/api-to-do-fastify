@@ -1,10 +1,10 @@
-import { ProjectMemberRepository } from '@modules/project/repositories/implementations/ProjectMemberRepository';
-import { ProjectRepository } from '@modules/project/repositories/implementations/ProjectRepository';
-import { TaskOwnerRepository } from '@modules/task/repositories/implementations/TaskOwnerRepository';
-import { TaskRepository } from '@modules/task/repositories/implementations/TaskRepository';
-import { TaskStageRepository } from '@modules/task/repositories/implementations/TaskStageRepository';
-import { UserRepository } from '@modules/user/repositories/implementations/UserRepository';
 import { AwilixContainer, asClass } from 'awilix';
+import { ProjectMemberRepository } from '../../../modules/project/repositories/implementations/ProjectMemberRepository';
+import { ProjectRepository } from '../../../modules/project/repositories/implementations/ProjectRepository';
+import { TaskOwnerRepository } from '../../../modules/task/repositories/implementations/TaskOwnerRepository';
+import { TaskRepository } from '../../../modules/task/repositories/implementations/TaskRepository';
+import { TaskStageRepository } from '../../../modules/task/repositories/implementations/TaskStageRepository';
+import { UserRepository } from '../../../modules/user/repositories/implementations/UserRepository';
 
 export function registerRepositories(container: AwilixContainer): void {
   container.register(

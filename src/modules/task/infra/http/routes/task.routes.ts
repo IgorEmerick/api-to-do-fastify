@@ -4,12 +4,10 @@ import {
   createTaskStageBodyType,
 } from '../schemas/body/createTaskStageBodySchema';
 import { createTaskStageHandler } from '../handlers/createTaskStageHandler';
-import { ensureUserAuthentication } from '@shared/infra/http/middlewares/ensureUserAuthentication';
 import {
   createTaskStageParamsSchema,
   createTaskStageParamsType,
 } from '../schemas/params/createTaskStageParamsSchema';
-import { ensureAdminPermissionOnProject } from '@shared/infra/http/middlewares/ensureAdminPermissionOnProject';
 import {
   CreateTaskBodyType,
   createTaskBodySchema,
@@ -19,7 +17,9 @@ import {
   createTaskParamsSchema,
 } from '../schemas/params/createTaskParamsSchema';
 import { createTaskHandler } from '../handlers/createTaskHandler';
-import { ensureEditPermissionOnProject } from '@shared/infra/http/middlewares/ensureEditPermissionOnProject';
+import { ensureAdminPermissionOnProject } from '../../../../../shared/infra/http/middlewares/ensureAdminPermissionOnProject';
+import { ensureEditPermissionOnProject } from '../../../../../shared/infra/http/middlewares/ensureEditPermissionOnProject';
+import { ensureUserAuthentication } from '../../../../../shared/infra/http/middlewares/ensureUserAuthentication';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);

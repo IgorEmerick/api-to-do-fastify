@@ -1,5 +1,5 @@
-import { ICreateTaskOwnerDTO } from '@modules/task/dtos/ICreateTaskOwnerDTO';
-import { TaskOwner } from '@modules/task/infra/typeorm/TaskOwner';
+import { ICreateTaskOwnerDTO } from '../../dtos/ICreateTaskOwnerDTO';
+import { TaskOwner } from '../../infra/typeorm/TaskOwner';
 
 export interface ITaskOwnerRepository {
   createMany(tasks_owners: ICreateTaskOwnerDTO[]): Promise<TaskOwner[]>;

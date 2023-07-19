@@ -1,6 +1,6 @@
 import { compare, hash } from 'bcrypt';
 import { IHashProvider } from '../models/IHashProvider';
-import { ICompareHashDTO } from '@modules/user/dtos/ICompareHashDTO';
+import { ICompareHashDTO } from '../../dtos/ICompareHashDTO';
 
 export class BCryptHashProvider implements IHashProvider {
   async hash(phrase: string): Promise<string> {

@@ -1,5 +1,5 @@
 import { Static, Type } from '@sinclair/typebox';
-import { hexRedex } from 'src/config/regex/hexRegex';
+import { hexRedex } from '../../../../../../config/regex/hexRegex';
 
 export const createTaskStageBodySchema = Type.Object({
   name: Type.String(),

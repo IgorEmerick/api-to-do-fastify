@@ -1,5 +1,5 @@
-import { ICreateTaskStageDTO } from '@modules/task/dtos/ICreateTaskStageDTO';
-import { TaskStage } from '@modules/task/infra/typeorm/TaskStage';
+import { ICreateTaskStageDTO } from '../../dtos/ICreateTaskStageDTO';
+import { TaskStage } from '../../infra/typeorm/TaskStage';
 import { ITaskStageRepository } from '../models/ITaskStageRepository';
 import { DataSource, Repository } from 'typeorm';
 

@@ -1,7 +1,7 @@
-import { ICreateUserDTO } from '@modules/user/dtos/ICreateUserDTO';
-import { CreateUserService } from '@modules/user/services/CreateUserService';
-import { container } from '@shared/infra/containers';
 import { FastifyReply, FastifyRequest } from 'fastify';
+import { container } from '../../../../../shared/infra/containers';
+import { ICreateUserDTO } from '../../../dtos/ICreateUserDTO';
+import { CreateUserService } from '../../../services/CreateUserService';
 
 interface ICreateUserRequest extends FastifyRequest {
   body: ICreateUserDTO;

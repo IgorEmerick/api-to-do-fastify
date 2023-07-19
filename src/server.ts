@@ -1,6 +1,6 @@
-import { app } from '@shared/infra/http/app';
-import { startEnvironment } from '@shared/infra/http/startEnvironment';
 import { config } from 'dotenv';
+import { app } from './shared/infra/http/app';
+import { startEnvironment } from './shared/utils/startEnvironment';
 
 config();
 

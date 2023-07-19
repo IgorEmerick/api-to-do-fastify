@@ -1,9 +1,9 @@
-import { IUserRepository } from '@modules/user/repositories/models/IUserRepository';
 import { Project } from '../infra/typeorm/Project';
-import { HttpError } from '@shared/errors/HttpError';
 import { IProjectRepository } from '../repositories/models/IProjectRepository';
 import { ICreateProjectMemberDTO } from '../dtos/ICreateProjectMemberDTO';
 import { IProjectMemberRepository } from '../repositories/models/IProjectMemberRepository';
+import { HttpError } from '../../../shared/errors/HttpError';
+import { IUserRepository } from '../../user/repositories/models/IUserRepository';
 
 interface IRequest {
   members?: { email: string; permission: string }[];

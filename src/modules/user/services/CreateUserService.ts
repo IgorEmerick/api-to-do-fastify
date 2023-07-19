@@ -1,7 +1,7 @@
-import { HttpError } from '@shared/errors/HttpError';
 import { IUserRepository } from '../repositories/models/IUserRepository';
 import { IHashProvider } from '../providers/models/IHashProvider';
 import { createUserBodyType } from '../infra/http/schemas/createUserBodySchema';
+import { HttpError } from '../../../shared/errors/HttpError';
 
 export class CreateUserService {
   constructor(

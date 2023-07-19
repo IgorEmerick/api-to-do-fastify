@@ -1,7 +1,7 @@
-import { ProjectMemberRepository } from '@modules/project/repositories/implementations/ProjectMemberRepository';
-import { HttpError } from '@shared/errors/HttpError';
-import { container } from '@shared/infra/containers';
 import { FastifyRequest } from 'fastify';
+import { ProjectMemberRepository } from '../../../../modules/project/repositories/implementations/ProjectMemberRepository';
+import { HttpError } from '../../../errors/HttpError';
+import { container } from '../../containers';
 
 interface IRequest extends FastifyRequest {
   params: { project_id: string };

@@ -1,4 +1,3 @@
-import { Project } from '@modules/project/infra/typeorm/Project';
 import {
   Column,
   CreateDateColumn,
@@ -10,6 +9,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { Task } from './Task';
+import { Project } from '../../../project/infra/typeorm/Project';
 
 @Entity('task_stages')
 export class TaskStage {

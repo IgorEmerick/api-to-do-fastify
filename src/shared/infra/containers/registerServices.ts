@@ -1,9 +1,9 @@
-import { CreateProjectService } from '@modules/project/services/CreateProjectService';
-import { CreateTaskService } from '@modules/task/services/CreateTaskService';
-import { CreateTaskStageService } from '@modules/task/services/CreateTaskStageService';
-import { AuthenticateUserService } from '@modules/user/services/AuthenticateUserService';
-import { CreateUserService } from '@modules/user/services/CreateUserService';
 import { AwilixContainer, asClass } from 'awilix';
+import { CreateProjectService } from '../../../modules/project/services/CreateProjectService';
+import { CreateTaskService } from '../../../modules/task/services/CreateTaskService';
+import { CreateTaskStageService } from '../../../modules/task/services/CreateTaskStageService';
+import { AuthenticateUserService } from '../../../modules/user/services/AuthenticateUserService';
+import { CreateUserService } from '../../../modules/user/services/CreateUserService';
 
 export function registerServices(container: AwilixContainer): void {
   container.register(

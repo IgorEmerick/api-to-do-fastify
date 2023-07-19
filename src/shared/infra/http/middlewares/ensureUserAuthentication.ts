@@ -1,9 +1,9 @@
-import { User } from '@modules/user/infra/typeorm/User';
-import { ITokenProvider } from '@modules/user/providers/models/ITokenProvider';
-import { IUserRepository } from '@modules/user/repositories/models/IUserRepository';
-import { HttpError } from '@shared/errors/HttpError';
-import { container } from '@shared/infra/containers';
 import { FastifyRequest } from 'fastify';
+import { User } from '../../../../modules/user/infra/typeorm/User';
+import { ITokenProvider } from '../../../../modules/user/providers/models/ITokenProvider';
+import { IUserRepository } from '../../../../modules/user/repositories/models/IUserRepository';
+import { HttpError } from '../../../errors/HttpError';
+import { container } from '../../containers';
 
 export async function ensureUserAuthentication(
   request: FastifyRequest,

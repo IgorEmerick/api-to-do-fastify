@@ -8,7 +8,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Task } from './Task';
-import { User } from '@modules/user/infra/typeorm/User';
+import { User } from '../../../user/infra/typeorm/User';
 
 @Entity('tasks_owners')
 export class TaskOwner {

@@ -1,7 +1,7 @@
-import { IGenerateTokenDTO } from '@modules/user/dtos/IGenerateTokenDTO';
 import { ITokenProvider } from '../models/ITokenProvider';
 import { sign, verify } from 'jsonwebtoken';
 import { config } from 'dotenv';
+import { IGenerateTokenDTO } from '../../dtos/IGenerateTokenDTO';
 
 config();
 

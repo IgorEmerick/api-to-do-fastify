@@ -1,4 +1,4 @@
-import { IGenerateTokenDTO } from '@modules/user/dtos/IGenerateTokenDTO';
+import { IGenerateTokenDTO } from '../../dtos/IGenerateTokenDTO';
 
 export interface ITokenProvider {
   generateToken(options: IGenerateTokenDTO): Promise<string>;
