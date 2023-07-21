@@ -4,6 +4,7 @@ import { CreateTaskService } from '../../../modules/task/services/CreateTaskServ
 import { CreateTaskStageService } from '../../../modules/task/services/CreateTaskStageService';
 import { AuthenticateUserService } from '../../../modules/user/services/AuthenticateUserService';
 import { CreateUserService } from '../../../modules/user/services/CreateUserService';
+import { GetProjectByIdService } from '../../../modules/project/services/GetProjectByIdService';
 
 export function registerServices(container: AwilixContainer): void {
   container.register(
@@ -29,5 +30,10 @@ export function registerServices(container: AwilixContainer): void {
   container.register(
     'createTaskService',
     asClass(CreateTaskService, { lifetime: 'SINGLETON' }),
+  );
+
+  container.register(
+    'getProjectByIdService',
+    asClass(GetProjectByIdService, { lifetime: 'SINGLETON' }),
   );
 }
