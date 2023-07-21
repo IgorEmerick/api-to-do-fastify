@@ -19,4 +19,11 @@ export class ProjectRepository implements IProjectRepository {
   async findById(id: string): Promise<Project> {
     return this.repository.findOneBy({ id });
   }
+
+  async findWithStagesAndTasksById(id: string): Promise<Project> {
+    return this.repository.findOne({
+      relations: { stages: { tasks: true } },
+      where: { id },
+    });
+  }
 }

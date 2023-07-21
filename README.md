@@ -25,9 +25,9 @@ Back-end application to build a to-do list.
 **Get project**
 ***
 
-- [ ] Should be possible get all project information (including status and tasks) by id.
-- [ ] Must request authentication.
-- [ ] Must request at least view permission.
+- [x] Should be possible get all project information (including status and tasks) by id.
+- [x] Must request authentication.
+- [x] Must request at least view permission.
 
 **List projects**
 ***
