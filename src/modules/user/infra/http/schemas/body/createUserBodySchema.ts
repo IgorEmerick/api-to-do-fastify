@@ -1,9 +1,8 @@
 import { Type, Static } from '@sinclair/typebox';
-import { nameRegex } from '../../../../../../config/regex/nameRegex';
 import { passwordRegex } from '../../../../../../config/regex/passwordRegex';
 
 export const createUserBodySchema = Type.Object({
-  name: Type.String({ pattern: nameRegex }),
+  name: Type.String(),
   email: Type.String({ format: 'email' }),
   password: Type.String({
     pattern: passwordRegex,

@@ -1,8 +1,7 @@
 import { Static, Type } from '@sinclair/typebox';
-import { uuidV4Regex } from '../../../../../../config/regex/uuidV4Regex';
 
 export const createTaskStageParamsSchema = Type.Object({
-  project_id: Type.String({ pattern: uuidV4Regex }),
+  project_id: Type.String({ format: 'uuid' }),
 });
 
 export type CreateTaskStageParamsType = Static<
