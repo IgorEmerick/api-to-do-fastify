@@ -16,6 +16,9 @@ import {
   authorizationHeadersSchema,
   AuthorizationHeadersType,
 } from '../../../../../shared/infra/http/schemas/headers/authorizationHeadersSchema';
+import { createProjectResponseSchema } from '../schemas/responses/createProjectResponseSchema';
+import { getProjectByIdResponseSchema } from '../schemas/responses/getProjectByIdResponseSchema';
+import { listProjectResponseSchema } from '../schemas/responses/listProjectResponseSchema';
 
 export async function projectRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
@@ -27,6 +30,7 @@ export async function projectRouter(app: FastifyInstance) {
         summary: 'Create project',
         body: createProjectBodySchema,
         headers: authorizationHeadersSchema,
+        response: createProjectResponseSchema,
       },
     },
     createProjectHandler,
@@ -42,6 +46,7 @@ export async function projectRouter(app: FastifyInstance) {
         summary: 'Get project info',
         params: getProjectByIdParamsSchema,
         headers: authorizationHeadersSchema,
+        response: getProjectByIdResponseSchema,
       },
       preHandler: [ensureViewPermissionOnProject],
     },
@@ -54,6 +59,7 @@ export async function projectRouter(app: FastifyInstance) {
       schema: {
         summary: 'List user projects',
         headers: authorizationHeadersSchema,
+        response: listProjectResponseSchema,
       },
     },
     listProjectsHandler,

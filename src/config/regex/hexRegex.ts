@@ -1,1 +1,1 @@
-export const hexRedex = `^(#)([a-fA-F\\d]{6})$`;
+export const hexRegex = `^(#)([a-fA-F\\d]{6})$`;
