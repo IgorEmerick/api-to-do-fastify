@@ -32,9 +32,9 @@ Back-end application to build a to-do list.
 **List projects**
 ***
 
-- [ ] Should be possible list projects.
-- [ ] Must request authentication.
-- [ ] Must request at least view permission to projects on list.
+- [x] Should be possible list projects.
+- [x] Must request authentication.
+- [x] Must request at least view permission to projects on list.
 
 **Update users permission**
 ***

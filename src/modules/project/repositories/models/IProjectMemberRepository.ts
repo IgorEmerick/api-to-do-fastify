@@ -7,4 +7,5 @@ export interface IProjectMemberRepository {
     project_id: string,
     user_id: string,
   ): Promise<ProjectMember>;
+  findWithProjectByUserId(user_id: string): Promise<ProjectMember[]>;
 }
