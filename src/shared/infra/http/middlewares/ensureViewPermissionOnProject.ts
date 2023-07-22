@@ -22,12 +22,7 @@ export async function ensureViewPermissionOnProject(
     user_id as string,
   );
 
-  if (
-    !projectMember ||
-    (projectMember.permission !== 'VIEW' &&
-      projectMember.permission !== 'EDIT' &&
-      projectMember.permission !== 'ADMIN')
-  ) {
+  if (!projectMember) {
     throw new HttpError(403, 'Permission denied!');
   }
 }
