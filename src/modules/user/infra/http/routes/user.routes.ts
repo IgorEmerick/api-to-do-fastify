@@ -13,13 +13,18 @@ import {
 export async function userRouter(app: FastifyInstance) {
   app.post<{ Body: CreateUserBodyType }>(
     '/',
-    { schema: { body: createUserBodySchema } },
+    { schema: { summary: 'Create user', body: createUserBodySchema } },
     createUserHandler,
   );
 
   app.post<{ Body: AuthenticateUserBodyType }>(
     '/authenticate',
-    { schema: { body: authenticateUserBodySchema } },
+    {
+      schema: {
+        summary: 'Authenticate user',
+        body: authenticateUserBodySchema,
+      },
+    },
     authenticateUserHandler,
   );
 }

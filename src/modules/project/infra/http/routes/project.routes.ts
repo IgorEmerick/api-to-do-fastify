@@ -20,16 +20,29 @@ import {
 export async function projectRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
 
-  app.post<{ Body: CreateProjectBodyType }>(
+  app.post<{ Body: CreateProjectBodyType; Headers: AuthorizationHeadersType }>(
     '/',
-    { schema: { body: createProjectBodySchema } },
+    {
+      schema: {
+        summary: 'Create project',
+        body: createProjectBodySchema,
+        headers: authorizationHeadersSchema,
+      },
+    },
     createProjectHandler,
   );
 
-  app.get<{ Params: GetProjectByIdParamsType }>(
+  app.get<{
+    Params: GetProjectByIdParamsType;
+    Headers: AuthorizationHeadersType;
+  }>(
     '/project-info/:project_id',
     {
-      schema: { params: getProjectByIdParamsSchema },
+      schema: {
+        summary: 'Get project info',
+        params: getProjectByIdParamsSchema,
+        headers: authorizationHeadersSchema,
+      },
       preHandler: [ensureViewPermissionOnProject],
     },
     getProjectByIdHandler,
@@ -37,7 +50,12 @@ export async function projectRouter(app: FastifyInstance) {
 
   app.get<{ Headers: AuthorizationHeadersType }>(
     '/projects',
-    { schema: { headers: authorizationHeadersSchema } },
+    {
+      schema: {
+        summary: 'List user projects',
+        headers: authorizationHeadersSchema,
+      },
+    },
     listProjectsHandler,
   );
 }
