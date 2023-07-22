@@ -28,7 +28,6 @@ Back-end application to build a to-do list.
 - [x] Should be possible get all project information (including status and tasks) by id.
 - [x] Must request authentication.
 - [x] Must request at least view permission.
-- [ ] Should not return deleted tasks.
 
 **List projects**
 ***
