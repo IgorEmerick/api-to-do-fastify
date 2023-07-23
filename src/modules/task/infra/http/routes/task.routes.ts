@@ -25,6 +25,7 @@ import {
   AuthorizationHeadersType,
 } from '../../../../../shared/infra/http/schemas/headers/authorizationHeadersSchema';
 import { createTaskResponseSchema } from '../schemas/responses/createTaskResponseSchema';
+import { createTaskStageResponseSchema } from '../schemas/responses/createTaskStageResponseSchema';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
@@ -41,6 +42,7 @@ export async function taskRouter(app: FastifyInstance) {
         body: createTaskStageBodySchema,
         params: createTaskStageParamsSchema,
         headers: authorizationHeadersSchema,
+        response: createTaskStageResponseSchema,
       },
       preHandler: [ensureAdminPermissionOnProject],
     },
