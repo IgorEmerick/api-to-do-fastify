@@ -4,9 +4,10 @@ import { ICreateProjectMemberDTO } from '../dtos/ICreateProjectMemberDTO';
 import { IProjectMemberRepository } from '../repositories/models/IProjectMemberRepository';
 import { HttpError } from '../../../shared/errors/HttpError';
 import { IUserRepository } from '../../user/repositories/models/IUserRepository';
+import { IRequestProjectMemberDTO } from '../dtos/IRequestProjectMemberDTO';
 
 interface IRequest {
-  members?: { email: string; permission: string }[];
+  members?: IRequestProjectMemberDTO[];
   name: string;
   admin_id: string;
 }
