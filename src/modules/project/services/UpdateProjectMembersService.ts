@@ -25,6 +25,13 @@ export class UpdateProjectMembersService {
       throw new HttpError(404, 'Project not found!');
     }
 
+    if (members.length === 0) {
+      throw new HttpError(
+        400,
+        'You can not remove all members of this project!',
+      );
+    }
+
     const projectMembers =
       await this.projectMemberRepository.findManyWithUserByProjectId(
         project_id,
