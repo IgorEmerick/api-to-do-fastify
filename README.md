@@ -39,10 +39,10 @@ Back-end application to build a to-do list.
 **Update users permission**
 ***
 
-- [ ] Should be possible update users permission on project.
-- [ ] Should not be able to update permissions if user does not have any permission on project.
-- [ ] Must request authentication.
-- [ ] Must request admin permission on project.
+- [x] Should be possible update users permission on project.
+- [x] Should not be able to update permissions if user does not have any permission on project.
+- [x] Must request authentication.
+- [x] Must request admin permission on project.
 
 **Add user on project**
 ***

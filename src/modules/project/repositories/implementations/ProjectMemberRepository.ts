@@ -18,6 +18,10 @@ export class ProjectMemberRepository implements IProjectMemberRepository {
     return this.repository.save(newMembers);
   }
 
+  async update(member: ProjectMember): Promise<ProjectMember> {
+    return this.repository.save(member);
+  }
+
   async findByProjectIdAndUserId(
     project_id: string,
     user_id: string,

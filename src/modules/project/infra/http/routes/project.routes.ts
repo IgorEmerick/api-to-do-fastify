@@ -19,6 +19,17 @@ import {
 import { createProjectResponseSchema } from '../schemas/responses/createProjectResponseSchema';
 import { getProjectByIdResponseSchema } from '../schemas/responses/getProjectByIdResponseSchema';
 import { listProjectResponseSchema } from '../schemas/responses/listProjectResponseSchema';
+import { updateUserProjectPermissionHandler } from '../handlers/updateUserProjectPermissionHandler';
+import {
+  updateUserProjectPermissionParamsSchema,
+  UpdateUserProjectPermissionParamsType,
+} from '../schemas/params/updateUserProjectPermissionParamsSchema';
+import {
+  updateUserProjectPermissionBodySchema,
+  UpdateUserProjectPermissionBodyType,
+} from '../schemas/bodies/updateUserProjectPermissionBodySchema';
+import { updateUserProjectPermissionResponseSchema } from '../schemas/responses/updateUserProjectPermissionResponseSchema';
+import { ensureAdminPermissionOnProject } from '../../../../../shared/infra/http/middlewares/ensureAdminPermissionOnProject';
 
 export async function projectRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
@@ -34,6 +45,24 @@ export async function projectRouter(app: FastifyInstance) {
       },
     },
     createProjectHandler,
+  );
+
+  app.patch<{
+    Headers: AuthorizationHeadersType;
+    Params: UpdateUserProjectPermissionParamsType;
+    Body: UpdateUserProjectPermissionBodyType;
+  }>(
+    '/user-permission/:project_id',
+    {
+      schema: {
+        summary: 'Update user project permission',
+        params: updateUserProjectPermissionParamsSchema,
+        body: updateUserProjectPermissionBodySchema,
+        response: updateUserProjectPermissionResponseSchema,
+      },
+      preHandler: [ensureAdminPermissionOnProject],
+    },
+    updateUserProjectPermissionHandler,
   );
 
   app.get<{
