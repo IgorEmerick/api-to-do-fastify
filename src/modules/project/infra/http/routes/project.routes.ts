@@ -2,7 +2,7 @@ import { FastifyInstance } from 'fastify';
 import {
   createProjectBodySchema,
   CreateProjectBodyType,
-} from '../schemas/body/createProjectBodySchema';
+} from '../schemas/bodies/createProjectBodySchema';
 import { createProjectHandler } from '../handlers/createProjectHandler';
 import { ensureUserAuthentication } from '../../../../../shared/infra/http/middlewares/ensureUserAuthentication';
 import { getProjectByIdHandler } from '../handlers/getProjectByIdHandler';

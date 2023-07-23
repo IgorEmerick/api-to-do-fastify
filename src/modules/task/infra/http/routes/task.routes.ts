@@ -2,7 +2,7 @@ import { FastifyInstance } from 'fastify';
 import {
   createTaskStageBodySchema,
   CreateTaskStageBodyType,
-} from '../schemas/body/createTaskStageBodySchema';
+} from '../schemas/bodies/createTaskStageBodySchema';
 import { createTaskStageHandler } from '../handlers/createTaskStageHandler';
 import {
   createTaskStageParamsSchema,
@@ -11,7 +11,7 @@ import {
 import {
   CreateTaskBodyType,
   createTaskBodySchema,
-} from '../schemas/body/createTaskBodySchema';
+} from '../schemas/bodies/createTaskBodySchema';
 import {
   CreateTaskParamsType,
   createTaskParamsSchema,
@@ -24,6 +24,7 @@ import {
   authorizationHeadersSchema,
   AuthorizationHeadersType,
 } from '../../../../../shared/infra/http/schemas/headers/authorizationHeadersSchema';
+import { createTaskResponseSchema } from '../schemas/responses/createTaskResponseSchema';
 
 export async function taskRouter(app: FastifyInstance) {
   app.addHook('preHandler', ensureUserAuthentication);
@@ -36,7 +37,7 @@ export async function taskRouter(app: FastifyInstance) {
     '/stage/:project_id',
     {
       schema: {
-        summary: 'Create task',
+        summary: 'Create task stage',
         body: createTaskStageBodySchema,
         params: createTaskStageParamsSchema,
         headers: authorizationHeadersSchema,
@@ -54,10 +55,11 @@ export async function taskRouter(app: FastifyInstance) {
     '/create/:project_id/:stage_id',
     {
       schema: {
-        summary: 'Create task stage',
+        summary: 'Create task',
         body: createTaskBodySchema,
         params: createTaskParamsSchema,
         headers: authorizationHeadersSchema,
+        response: createTaskResponseSchema,
       },
       preHandler: [ensureEditPermissionOnProject],
     },

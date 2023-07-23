@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { CreateProjectBodyType } from '../schemas/body/createProjectBodySchema';
+import { CreateProjectBodyType } from '../schemas/bodies/createProjectBodySchema';
 import { container } from '../../../../../shared/infra/containers';
 import { CreateProjectService } from '../../../services/CreateProjectService';
 
