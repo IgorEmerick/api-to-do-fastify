@@ -6,6 +6,8 @@ import { AuthenticateUserService } from '../../../modules/user/services/Authenti
 import { CreateUserService } from '../../../modules/user/services/CreateUserService';
 import { GetProjectByIdService } from '../../../modules/project/services/GetProjectByIdService';
 import { ListProjectsService } from '../../../modules/project/services/ListProjectsService';
+import { UpdateUserProjectPermissionService } from '../../../modules/project/services/UpdateUserProjectPermissionService';
+import { UpdateProjectMembersService } from '../../../modules/project/services/UpdateProjectMembersService';
 
 export function registerServices(container: AwilixContainer): void {
   container.register(
@@ -41,5 +43,15 @@ export function registerServices(container: AwilixContainer): void {
   container.register(
     'listProjectsService',
     asClass(ListProjectsService, { lifetime: 'SINGLETON' }),
+  );
+
+  container.register(
+    'updateUserProjectPermissionService',
+    asClass(UpdateUserProjectPermissionService, { lifetime: 'SINGLETON' }),
+  );
+
+  container.register(
+    'updateProjectMembersService',
+    asClass(UpdateProjectMembersService, { lifetime: 'SINGLETON' }),
   );
 }
