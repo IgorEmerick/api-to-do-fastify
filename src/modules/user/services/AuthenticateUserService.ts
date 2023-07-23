@@ -1,4 +1,4 @@
-import { AuthenticateUserBodyType } from '../infra/http/schemas/body/authenticateUserBodySchema';
+import { AuthenticateUserBodyType } from '../infra/http/schemas/bodies/authenticateUserBodySchema';
 import { ITokenProvider } from '../providers/models/ITokenProvider';
 import { IUserRepository } from '../repositories/models/IUserRepository';
 import { IHashProvider } from '../providers/models/IHashProvider';
