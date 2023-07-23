@@ -50,6 +50,7 @@ Back-end application to build a to-do list.
 - [ ] Should be possible update project members list.
 - [ ] Should not be able to update members list on a project that does not exist.
 - [ ] Should not be able to add users that does not exist on project members.
+- [ ] Should not be able to remove all project members.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
 
