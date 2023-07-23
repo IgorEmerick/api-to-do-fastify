@@ -40,8 +40,6 @@ Back-end application to build a to-do list.
 ***
 
 - [ ] Should be possible update users permission on project.
-- [ ] Should not be able to update permissions if project does not exist.
-- [ ] Should not be able to update permissions if user does not exist.
 - [ ] Should not be able to update permissions if user does not have any permission on project.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
