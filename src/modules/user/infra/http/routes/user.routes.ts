@@ -10,6 +10,7 @@ import {
   createUserBodySchema,
 } from '../schemas/bodies/createUserBodySchema';
 import { createUserResponseSchema } from '../schemas/responses/createUserResponseSchema';
+import { authenticateUserResponseSchema } from '../schemas/responses/authenticateUserResponseSchema';
 
 export async function userRouter(app: FastifyInstance) {
   app.post<{ Body: CreateUserBodyType }>(
@@ -30,6 +31,7 @@ export async function userRouter(app: FastifyInstance) {
       schema: {
         summary: 'Authenticate user',
         body: authenticateUserBodySchema,
+        response: authenticateUserResponseSchema,
       },
     },
     authenticateUserHandler,
