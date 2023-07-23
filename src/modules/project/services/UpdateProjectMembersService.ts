@@ -39,8 +39,8 @@ export class UpdateProjectMembersService {
 
     await this.projectMemberRepository.deleteManyByIds(deleteProjectMembersIds);
 
-    const updateMembers = new Set(
-      members.map<ProjectMember>(member => {
+    const updateMembers = members
+      .map<ProjectMember>(member => {
         const projectMember = projectMembers.find(
           foundProjectMember => foundProjectMember.user.email === member.email,
         );
@@ -48,8 +48,8 @@ export class UpdateProjectMembersService {
         return projectMember && projectMember.permission !== member.permission
           ? { ...projectMember, permission: member.permission, user: undefined }
           : undefined;
-      }),
-    );
+      })
+      .filter(member => !!member);
 
     const newUsersEmails = members
       .filter(
