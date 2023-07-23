@@ -45,9 +45,9 @@ export class UpdateProjectMembersService {
           foundProjectMember => foundProjectMember.user.email === member.email,
         );
 
-        return projectMember && projectMember.permission !== member.permission
-          ? { ...projectMember, permission: member.permission, user: undefined }
-          : undefined;
+        return (
+          projectMember && { ...projectMember, permission: member.permission }
+        );
       })
       .filter(member => !!member);
 
@@ -75,7 +75,7 @@ export class UpdateProjectMembersService {
     });
 
     return [
-      ...(await this.projectMemberRepository.updateMany([...updateMembers])),
+      ...(await this.projectMemberRepository.updateMany(updateMembers)),
       ...(await this.projectMemberRepository.createMany(createMembers)),
     ];
   }
