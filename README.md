@@ -25,7 +25,7 @@ Back-end application to build a to-do list.
 **Get project**
 ***
 
-- [x] Should be possible get all project information (including status and tasks) by id.
+- [x] Should be possible get all project information (including status and tasks).
 - [x] Must request authentication.
 - [x] Must request at least view permission.
 
@@ -46,12 +46,21 @@ Back-end application to build a to-do list.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
 
+**Add user on project**
+***
+
+- [ ] Should be possible add an user to project.
+- [ ] Should not be able to add an user that does not exist.
+- [ ] Should not be able to add an user on a project that does not exist.
+- [ ] Must request authentication.
+- [ ] Must request admin permission on project.
+
 ## Task
 
 **Create task stage**
 ***
 
-- [x] Should be possible create a stage into a project using stage name, color and project id.
+- [x] Should be possible create a stage into a project.
 - [x] Should not create two stages with same name in same project.
 - [x] Should not create a stage for a project that does not exists.
 - [x] Must request authentication.
@@ -60,7 +69,7 @@ Back-end application to build a to-do list.
 **Create task**
 ***
 
-- [x] Should be possible create a task using task title, description, stage id and owners ids.
+- [x] Should be possible create a task.
 - [x] Should not be possible create a task to a stage that does not exists.
 - [x] Must request authentication.
 - [x] Must request at least edit permission on task project.
@@ -71,7 +80,7 @@ Back-end application to build a to-do list.
 **Create user**
 ***
 
-- [x] Should create an user by name, email and password.
+- [x] Should create an user.
 - [x] Should not create two or more users with same email.
 - [x] Password must contain from 10 to 16 characters.
 - [x] Password must contain upper case.
