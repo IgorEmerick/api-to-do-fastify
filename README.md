@@ -44,11 +44,12 @@ Back-end application to build a to-do list.
 - [x] Must request authentication.
 - [x] Must request admin permission on project.
 
-**Update project users**
+**Update project members**
 ***
 
-- [ ] Should be possible update project users list.
-- [ ] Should not be able to update users list on a project that does not exist.
+- [ ] Should be possible update project members list.
+- [ ] Should not be able to update members list on a project that does not exist.
+- [ ] Should not be able to add users that does not exist on project members.
 - [ ] Must request authentication.
 - [ ] Must request admin permission on project.
 
