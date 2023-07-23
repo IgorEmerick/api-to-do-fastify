@@ -89,6 +89,7 @@ export async function projectRouter(app: FastifyInstance) {
         body: updateProjectMembersBodySchema,
         response: updateProjectMembersResponseSchema,
       },
+      preHandler: [ensureAdminPermissionOnProject],
     },
     updateProjectMembersHandler,
   );
