@@ -1,7 +1,7 @@
 import { IUserRepository } from '../repositories/models/IUserRepository';
 import { IHashProvider } from '../providers/models/IHashProvider';
-import { createUserBodyType } from '../infra/http/schemas/createUserBodySchema';
 import { HttpError } from '../../../shared/errors/HttpError';
+import { CreateUserBodyType } from '../infra/http/schemas/bodies/createUserBodySchema';
 
 export class CreateUserService {
   constructor(
@@ -9,7 +9,7 @@ export class CreateUserService {
     private hashProvider: IHashProvider,
   ) {}
 
-  async execute({ email, name, password }: createUserBodyType) {
+  async execute({ email, name, password }: CreateUserBodyType) {
     const existUserWithEmail = await this.userRepository.findByEmail(email);
 
     if (existUserWithEmail) {

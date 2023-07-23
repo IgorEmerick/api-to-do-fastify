@@ -3,23 +3,37 @@ import { createUserHandler } from '../handlers/createUserHandler';
 import {
   authenticateUserBodySchema,
   AuthenticateUserBodyType,
-} from '../schemas/body/authenticateUserBodySchema';
+} from '../schemas/bodies/authenticateUserBodySchema';
 import { authenticateUserHandler } from '../handlers/authenticateUserHandler';
 import {
   CreateUserBodyType,
   createUserBodySchema,
-} from '../schemas/body/createUserBodySchema';
+} from '../schemas/bodies/createUserBodySchema';
+import { createUserResponseSchema } from '../schemas/responses/createUserResponseSchema';
+import { authenticateUserResponseSchema } from '../schemas/responses/authenticateUserResponseSchema';
 
 export async function userRouter(app: FastifyInstance) {
   app.post<{ Body: CreateUserBodyType }>(
     '/',
-    { schema: { body: createUserBodySchema } },
+    {
+      schema: {
+        summary: 'Create user',
+        body: createUserBodySchema,
+        response: createUserResponseSchema,
+      },
+    },
     createUserHandler,
   );
 
   app.post<{ Body: AuthenticateUserBodyType }>(
     '/authenticate',
-    { schema: { body: authenticateUserBodySchema } },
+    {
+      schema: {
+        summary: 'Authenticate user',
+        body: authenticateUserBodySchema,
+        response: authenticateUserResponseSchema,
+      },
+    },
     authenticateUserHandler,
   );
 }

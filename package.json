@@ -21,6 +21,8 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
+    "@fastify/swagger": "^8.8.0",
+    "@fastify/swagger-ui": "^1.9.2",
     "@fastify/type-provider-typebox": "^3.2.0",
     "@sinclair/typebox": "^0.28.14",
     "awilix": "^8.0.1",

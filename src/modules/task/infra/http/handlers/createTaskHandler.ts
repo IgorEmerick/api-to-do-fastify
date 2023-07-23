@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
-import { CreateTaskBodyType } from '../schemas/body/createTaskBodySchema';
+import { CreateTaskBodyType } from '../schemas/bodies/createTaskBodySchema';
 import { CreateTaskParamsType } from '../schemas/params/createTaskParamsSchema';
 import { container } from '../../../../../shared/infra/containers';
 import { CreateTaskService } from '../../../services/CreateTaskService';
